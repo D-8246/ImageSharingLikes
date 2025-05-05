@@ -1,0 +1,18 @@
+﻿@using ImageSharingLikes.Data
+@model IndexViewModel
+
+@foreach(Image image in Model.images)
+{
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="bg-light p-4 rounded shadow mb-3" style="margin-bottom: 20px; text-align: center;">
+                <a href="/home/viewimage?id=@image.Id">
+                    <h3>@image.Name</h3>
+                    <h5>Uploaded at: @image.Date</h5>
+                    <img style="width: 400px;" src="/images/@image.FilePath" />
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
